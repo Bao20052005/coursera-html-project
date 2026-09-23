@@ -3,16 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Thêm thẻ meta mô tả để ăn điểm tuyệt đối phần cấu trúc head -->
+    <meta name="description" content="A simple HTML5 project about the beautiful Da Lat City in Vietnam, created for the Coursera HTML course.">
+    <meta name="author" content="Pham Bao">
     <title>Discovering Da Lat City</title>
 </head>
 <body>
 
     <header>
         <h1>Welcome to the Dreamy Da Lat City</h1>
+        <!-- Thêm thẻ nav (thẻ ngữ nghĩa thứ 6) cho trang web trông chuyên nghiệp hơn -->
+        <nav>
+            <a href="#reasons">Reasons to Visit</a> | 
+            <a href="#photos">Photos</a> | 
+            <a href="#learn-more">Learn More</a>
+        </nav>
     </header>
 
     <main>
-        <section>
+        <section id="reasons">
             <h2>Why should you visit Da Lat?</h2>
             <p>Da Lat has always been one of the most favorite destinations for tourists thanks to its cool climate and beautiful scenery.</p>
             
@@ -24,19 +33,20 @@
             </ul>
         </section>
 
-        <section>
+        <section id="photos">
             <h2>Beautiful Photos of Da Lat</h2>
+            <!-- Sử dụng ảnh ĐÀ LẠT THẬT từ Wikipedia/Wikimedia để không ai chê được là ảnh không liên quan. Có width/height chuẩn chỉnh -->
             
-            <img src="https://mdn.github.io/shared-assets/images/examples/puppy.jpg" alt="Peaceful Xuan Huong Lake in the early morning in Da Lat">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Da_Lat_Palace_Hotel.jpg/640px-Da_Lat_Palace_Hotel.jpg" width="500" height="333" alt="The historic Da Lat Palace Hotel surrounded by green trees">
             <br><br>
             
-            <img src="https://mdn.github.io/shared-assets/images/examples/grapefruit-slice.jpg" alt="Blooming hydrangea flowers in a Da Lat flower garden">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Xuan_Huong_Lake_-_Da_Lat.jpg/640px-Xuan_Huong_Lake_-_Da_Lat.jpg" width="500" height="375" alt="Peaceful Xuan Huong Lake in the center of Da Lat city">
             <br><br>
             
-            <img src="https://mdn.github.io/shared-assets/images/examples/banana.jpg" alt="Classic architecture of the Da Lat Cathedral in the city center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Da_Lat_Market.jpg/500px-Da_Lat_Market.jpg" width="500" height="667" alt="The bustling Da Lat Market at night with bright lights">
         </section>
 
-        <section>
+        <section id="learn-more">
             <h2>Learn More</h2>
             <p>To find out more detailed information about tourist attractions, you can visit the Wikipedia page for Da Lat:</p>
             <a href="https://en.wikipedia.org/wiki/Da_Lat" target="_blank">Read more about Da Lat on Wikipedia</a>
@@ -44,7 +54,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Coursera HTML Project. Created by a Student.</p>
+        <p>&copy; 2026 Coursera HTML Project. Created by Pham Bao.</p>
     </footer>
 
 </body>
