@@ -3,33 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Styled Page</title>
-    
-    <!-- LIÊN KẾT FILE CSS VÀO ĐÂY NÈ! -->
+    <title>Advanced CSS Project</title>
+    <!-- Liên kết với file CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Yêu cầu 2: Thêm liên kết "Chuyển đến Nội dung chính" (Skip to main content) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <header>
-        <h1>Welcome to My CSS Project</h1>
+        <h1>Welcome to My Advanced CSS Project</h1>
+        
+        <!-- Yêu cầu 4: Thẻ nav sẽ được style thành inline-block rộng 80% trong CSS -->
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Page 2</a></li>
+                <li><a href="#">Page 3</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="page2.html">Page 2</a></li>
-            <li><a href="page3.html">Page 3</a></li>
-        </ul>
-    </nav>
-
-    <main>
+    <!-- Yêu cầu 2: Thêm id="main-content" vào thẻ main -->
+    <main id="main-content">
         <h2>About This Project</h2>
-        <p>This is the first page of my CSS styling project. I am learning how to apply styles to HTML elements using an external stylesheet.</p>
-        <p>By linking all three HTML pages to the same style.css file, we ensure a consistent look and feel across the entire website.</p>
+        <p>This page demonstrates advanced CSS techniques including Flexbox, CSS Grid, and Web Accessibility standards.</p>
+
+        <!-- Yêu cầu 6 & 7 & 8: Lớp lưới (Grid) -->
+        <h2>CSS Grid Layout (Images)</h2>
+        <div class="grid">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400" alt="View of planet Earth from space showing glowing city lights at night">
+            <img src="https://images.unsplash.com/photo-1614728263952-84ea256f9679?w=400" alt="Astronaut in a white spacesuit floating outside the International Space Station">
+        </div>
+
+        <!-- Yêu cầu 9: Lớp Flexbox -->
+        <h2>CSS Flexbox Layout (Navigation Blocks)</h2>
+        <div class="flex">
+            <div class="flex-item">Flex Item 1</div>
+            <div class="flex-item">Flex Item 2</div>
+            <div class="flex-item">Flex Item 3</div>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 My Web Design Journey. All rights reserved.</p>
+        <p>&copy; 2026 My CSS Project. All rights reserved.</p>
     </footer>
 
 </body>
