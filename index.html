@@ -3,52 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced CSS Project</title>
-    <!-- Liên kết với file CSS -->
+    <title>Home - CSS3 Final Project</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- Yêu cầu 2: Thêm liên kết "Chuyển đến Nội dung chính" (Skip to main content) -->
+    <!-- Yêu cầu 1 & 3: Skip link chỉ hiện khi focus -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header>
-        <h1>Welcome to My Advanced CSS Project</h1>
-        
-        <!-- Yêu cầu 4: Thẻ nav sẽ được style thành inline-block rộng 80% trong CSS -->
+        <h1>Welcome to My CSS3 Masterpiece</h1>
+        <!-- Yêu cầu 4 & 7: Navigation sử dụng Flexbox và có hover -->
         <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Page 2</a></li>
-                <li><a href="#">Page 3</a></li>
+            <ul class="flex-nav">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Yêu cầu 2: Thêm id="main-content" vào thẻ main -->
     <main id="main-content">
-        <h2>About This Project</h2>
-        <p>This page demonstrates advanced CSS techniques including Flexbox, CSS Grid, and Web Accessibility standards.</p>
-
-        <!-- Yêu cầu 6 & 7 & 8: Lớp lưới (Grid) -->
-        <h2>CSS Grid Layout (Images)</h2>
-        <div class="grid">
-            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400" alt="View of planet Earth from space showing glowing city lights at night">
-            <img src="https://images.unsplash.com/photo-1614728263952-84ea256f9679?w=400" alt="Astronaut in a white spacesuit floating outside the International Space Station">
-        </div>
-
-        <!-- Yêu cầu 9: Lớp Flexbox -->
-        <h2>CSS Flexbox Layout (Navigation Blocks)</h2>
-        <div class="flex">
-            <div class="flex-item">Flex Item 1</div>
-            <div class="flex-item">Flex Item 2</div>
-            <div class="flex-item">Flex Item 3</div>
+        <h2>The Power of Modern CSS</h2>
+        <p>This project demonstrates advanced CSS3 techniques including Flexbox, Grid, Box Model styling, pseudo-classes like :hover and :nth-child, and strict Web Accessibility standards.</p>
+        
+        <!-- Yêu cầu 1: Ít nhất 1 hình ảnh ở trang này -->
+        <div class="hero-image-container">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800" alt="A breathtaking view of planet Earth from space at night showing glowing city lights">
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 My CSS Project. All rights reserved.</p>
+        <p>&copy; 2026 CSS3 Final Project. Built with pure HTML and CSS.</p>
     </footer>
-
 </body>
 </html>
