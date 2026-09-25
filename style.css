@@ -1,74 +1,96 @@
-/* Bước 3: Tạo kiểu cho thẻ body */
+/* Cấu trúc chung */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 18px;
-    background-color: #f4f4f9;
-    color: #333333;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* Nền trắng */
+    color: #222222; /* Chữ xám đen - Đảm bảo độ tương phản cực cao qua cửa ải WAVE */
     margin: 0;
+    padding: 20px;
+}
+
+/* Yêu cầu 2: Style cho link Skip to content (Ẩn đi, chỉ hiện khi bấm Tab) */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000000;
+    color: #ffffff;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s;
+}
+.skip-link:focus {
+    top: 0;
+}
+
+/* Yêu cầu 3: Nhận xét/thay đổi kiểu dáng cho phần tử li */
+nav ul {
+    list-style-type: none; /* Xóa dấu chấm tròn mặc định */
     padding: 0;
-}
-
-/* Bước 9: Tạo kiểu cho thẻ h1 */
-h1 {
-    text-align: center;
-    font-family: 'Georgia', serif;
-    color: #ffffff;
-    padding: 20px 0;
     margin: 0;
 }
 
-/* Bước 4: Tạo kiểu cho thẻ header */
-header {
-    background-color: #2c3e50;
-}
-
-/* Bước 5: Tạo kiểu cho thẻ nav */
+/* Yêu cầu 4: Nav sử dụng inline-block và rộng 80% */
 nav {
-    background-color: #34495e;
-    padding: 10px;
-}
-
-/* Bước 8: Tạo kiểu cho thẻ li */
-li {
     display: inline-block;
-    width: 120px;
-    text-align: center;
-    margin: 0 10px;
+    width: 80%;
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 5px;
 }
 
-/* Định dạng link trong nav */
+nav li {
+    display: inline; /* Đẩy các mục menu nằm ngang */
+    margin-right: 20px;
+}
+
 nav a {
-    color: #ffffff;
     text-decoration: none;
+    color: #0000cc; /* Màu xanh link đậm, an toàn cho WAVE */
     font-weight: bold;
 }
 
-nav a:hover {
-    text-decoration: underline;
+/* Yêu cầu 5: Bộ chọn hậu duệ (descendant selector) cho ảnh trong header/nav rộng 10% */
+/* (Ở đây mình áp dụng cho ảnh trong .grid theo ý đồ bài tập thực tế thường gặp, hoặc bạn có thể hiểu là ảnh đại diện) */
+header img {
+    width: 10%;
 }
 
-/* Bước 6: Tạo kiểu cho thẻ main */
-main {
-    background-color: #ffffff;
-    font-size: 1.1rem;
-    padding: 30px;
-    max-width: 800px;
-    margin: 20px auto;
+/* Yêu cầu 6: Tạo kiểu cho lớp lưới (Grid) 2 cột, mỗi cột xấp xỉ 40% */
+.grid {
+    display: grid;
+    grid-template-columns: 40% 40%; /* 2 cột mỗi cột 40% */
+    
+    /* Yêu cầu 8: Chơi với justify-content, align-items và row-gap */
+    justify-content: space-between; /* Căn đều 2 bên */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    row-gap: 20px; /* Khoảng cách giữa các hàng */
+    margin-top: 20px;
+}
+
+/* Yêu cầu 7: Bộ chọn hậu duệ để ảnh TRONG lớp lưới rộng 100% */
+.grid img {
+    width: 100%;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-/* Bước 10: Tạo kiểu cho thẻ p */
-p {
-    line-height: 1.8;
-    margin-bottom: 15px;
-}
-
-/* Bước 7: Tạo kiểu cho thẻ footer */
-footer {
-    background-color: #2c3e50;
-    color: #ffffff;
-    text-align: center;
+/* Yêu cầu 9: Tạo kiểu cho lớp flex */
+.flex {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép xuống dòng nếu màn hình nhỏ */
+    justify-content: space-around; /* Căn đều các item */
+    gap: 15px;
+    margin-top: 30px;
+    background-color: #f4f4f4;
     padding: 20px;
-    margin-top: 40px;
+}
+
+.flex-item {
+    background-color: #0044cc; /* Xanh dương đậm */
+    color: #ffffff; /* Chữ trắng - Tương phản hoàn hảo */
+    padding: 20px;
+    border-radius: 5px;
+    flex: 1 1 200px; /* Mỗi item chiếm tối thiểu 200px, tự động co giãn */
+    text-align: center;
+    font-weight: bold;
 }
