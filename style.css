@@ -1,33 +1,31 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #121212;
-    color: #e0e0e0;
+    background-color: #121212; /* Nền tối */
+    color: #e0e0e0; /* Chữ sáng - Tương phản chuẩn WCAG AAA */
     text-align: center;
     margin: 0;
     padding: 20px;
 }
 
-h1 {
+h1, h2 {
     color: #ffffff;
-    margin-bottom: 30px;
 }
 
 #image-container {
     max-width: 800px;
-    margin: 0 auto 30px auto;
+    margin: 0 auto 40px auto;
 }
 
 /* Khu vực hiển thị ảnh lớn */
 #preview-pic {
     width: 100%;
-    height: 400px;
+    height: 450px;
     background-color: #1e1e1e;
     background-size: cover;
     background-position: center;
     border-radius: 10px;
-    border: 2px solid #333;
-    /* Yêu cầu 4a: Giá trị ban đầu của hình nền là url("") - tức là không có ảnh */
-    background-image: url(""); 
+    border: 2px solid #444;
+    background-image: url(""); /* Bước 4a từ bài trước: url("") */
     transition: background-image 0.3s ease-in-out;
 }
 
@@ -36,29 +34,34 @@ h1 {
     margin-top: 15px;
     font-size: 1.2rem;
     font-style: italic;
-    color: #64b5f6;
+    color: #82b1ff; /* Xanh dương sáng nổi bật trên nền tối */
     min-height: 1.5em;
 }
 
 .thumbnail-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
     flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 /* Các ảnh nhỏ bên dưới */
 .thumbnail {
-    width: 200px;
-    height: 150px;
+    width: 150px;
+    height: 100px;
     object-fit: cover;
     border-radius: 8px;
     cursor: pointer;
-    border: 2px solid transparent;
+    border: 3px solid transparent;
     transition: transform 0.2s, border-color 0.2s;
+    outline: none; /* Ẩn outline mặc định xấu xí của trình duyệt */
 }
 
-.thumbnail:hover {
-    transform: scale(1.05);
-    border-color: #64b5f6;
+/* Hiệu ứng khi di chuột HOẶC khi dùng phím Tab focus vào */
+.thumbnail:hover, .thumbnail:focus {
+    transform: scale(1.08);
+    border-color: #82b1ff; /* Viền xanh sáng báo hiệu đang được chọn */
+    box-shadow: 0 0 15px rgba(130, 177, 255, 0.5);
 }
