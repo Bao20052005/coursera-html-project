@@ -3,39 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive JavaScript Gallery</title>
+    <title>Accessible Interactive Gallery</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <h1>Interactive Image Gallery</h1>
+        <h1>Accessible Interactive Image Gallery</h1>
     </header>
 
     <main>
+        <h2>Image Preview</h2>
         <!-- Khu vực ảnh lớn xem trước (Preview) -->
         <div id="image-container">
-            <!-- Yêu cầu 3e & 4a: Thay đổi hình nền (background-image) của div này -->
-            <div id="preview-pic"></div>
-            <!-- Yêu cầu 3c & 4b: Thay đổi văn bản của div này -->
-            <div id="image-text">Hover over an image below to display here.</div>
+            <div id="preview-pic" role="img" aria-label="Image preview area"></div>
+            <p id="image-text">Hover over or tab to an image below to display it here.</p>
         </div>
 
-        <!-- Danh sách các ảnh nhỏ bên dưới -->
+        <h2>Gallery Thumbnails</h2>
+        <!-- Bước 2: Sử dụng 6 hình ảnh với văn bản thay thế (alt) -->
         <div class="thumbnail-container">
             <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800" 
-                 alt="A breathtaking view of planet Earth from space at night" 
+                 alt="A breathtaking view of planet Earth from space at night showing glowing city lights" 
                  class="thumbnail">
                  
             <img src="https://images.unsplash.com/photo-1614728263952-84ea256f9679?w=800" 
-                 alt="An astronaut floating in space outside the International Space Station" 
+                 alt="An astronaut in a white spacesuit floating outside the International Space Station" 
                  class="thumbnail">
                  
             <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800" 
-                 alt="A colorful nebula in deep space filled with bright stars" 
+                 alt="A colorful nebula in deep space filled with bright stars and cosmic dust" 
+                 class="thumbnail">
+
+            <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=800" 
+                 alt="A powerful rocket launching into the sky leaving a massive trail of smoke" 
+                 class="thumbnail">
+
+            <img src="https://images.unsplash.com/photo-1454789548928-9efd52dc4031?w=800" 
+                 alt="Close up view of a complex satellite orbiting in dark space" 
+                 class="thumbnail">
+
+            <img src="https://images.unsplash.com/photo-1516849841032-87cbac4d88f7?w=800" 
+                 alt="The detailed surface of the moon with visible craters against a black background" 
                  class="thumbnail">
         </div>
     </main>
+
+    <footer>
+        <p>&copy; 2026 Accessible JS Project. Fully keyboard navigable.</p>
+    </footer>
 
     <!-- Liên kết tới file JavaScript -->
     <script src="script.js"></script>
