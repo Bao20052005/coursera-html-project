@@ -1,45 +1,96 @@
-/* Mobile view (Default): 1 column, full width */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* --- YÊU CẦU 4: MOBILE-FIRST (Không có @media cho mobile) --- */
+/* Giả sử bảng màu mặc định là sáng (Yêu cầu 8) */
+body {
+    margin: 0;
+    padding: 20px;
+    background-color: #ffffff; /* Nền sáng mặc định */
+    font-family: sans-serif;
 }
 
-.column {
-    width: 90%;
-    margin-bottom: 20px;
+.gallery {
+    /* Yêu cầu 4a: Lưới 1 cột, khoảng cách 10px giữa hàng và cột */
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.item {
+    margin: 0;
+    border: 2px solid #cccccc; /* Viền sáng mặc định */
+    background-color: #f0f0f0; /* Nền ảnh sáng mặc định (Yêu cầu 8a) */
+    color: #333333; /* Chữ tối mặc định */
     text-align: center;
+    padding-bottom: 10px;
+    /* ponytail: Thêm transition mượt mà cho việc đổi màu/bo tròn, sẽ bị tắt ở bước 7 nếu user cần */
+    transition: all 0.3s ease; 
 }
 
-.column img {
+.item img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
+    display: block;
 }
 
-/* --- YÊU CẦU 1: Truy vấn #1 tại 772px (Tablet) --- */
+/* --- YÊU CẦU 5: TABLET VIEW (≥ 772px) --- */
 @media (min-width: 772px) {
-    .container {
-        flex-direction: row; /* Đổi sang nằm ngang */
-        justify-content: space-between;
-        flex-wrap: wrap;
+    .gallery {
+        /* Yêu cầu 5a: Lưới 2 cột */
+        grid-template-columns: 1fr 1fr;
     }
 
-    .column {
-        width: 45%; /* Divs bằng 45% chiều rộng */
+    .item img {
+        /* Yêu cầu 5b: Bo tròn ảnh thành hình tròn */
+        border-radius: 50%;
     }
 
-    .column img {
-        max-height: 30vh; /* Hình ảnh không quá 30% chiều cao chế độ xem (viewport height) */
-        object-fit: cover; /* Giữ tỷ lệ ảnh không bị méo khi ép chiều cao */
+    /* Yêu cầu 5c: Con số cuối cùng chiếm cả 2 cột */
+    .last-item {
+        grid-column: span 2;
     }
 }
 
-/* --- YÊU CẦU 2: Truy vấn #2 tại 998px (Desktop) --- */
-@media (min-width: 998px) {
-    .column {
-        width: 30%; /* Divs bằng 30% chiều rộng */
+/* --- YÊU CẦU 6: DESKTOP VIEW (≥ 992px) --- */
+@media (min-width: 992px) {
+    /* Yêu cầu 6b & 6bi: Xóa bo tròn, KHÔNG dùng max-width */
+    .item img {
+        border-radius: 0;
+        width: 100%; /* Đảm bảo không dùng max-width, dùng width 100% */
+    }
+
+    /* Yêu cầu 6a: Đặt MỖI con số thứ ba chiếm cả 2 cột */
+    /* ponytail: :nth-child(3n) chọn chính xác các phần tử thứ 3, 6, 9... */
+    .item:nth-child(3n) {
+        grid-column: span 2;
     }
     
-    /* Không cần thay đổi nào khác (theo đúng yêu cầu 2b) */
+    /* Reset lại last-item nếu nó không phải là bội số của 3 (dù trong bài này có 6 ảnh nên nó trùng nhau, nhưng viết cho chắc) */
+    .last-item {
+        grid-column: span 2;
+    }
+}
+
+/* --- YÊU CẦU 7: REDUCED MOTION (Tôn trọng người dùng) --- */
+@media (prefers-reduced-motion: reduce) {
+    /* Yêu cầu 7a: Xóa hành vi cuộn / chuyển động */
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* --- YÊU CẦU 8: DARK MODE (Hệ điều hành bật chế độ tối) --- */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+    }
+
+    .item {
+        /* Yêu cầu 8a: Nền ảnh thành màu tối */
+        background-color: #1e1e1e;
+        /* Yêu cầu 8b: Màu chữ nhạt hơn (màu vàng nhạt) - Đảm bảo contrast qua WAVE */
+        color: #ffeb3b; 
+        /* Yêu cầu 8c: Viền thành màu đen */
+        border-color: #000000;
+    }
 }
