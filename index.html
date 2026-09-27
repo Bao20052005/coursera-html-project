@@ -3,23 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Layout</title>
+    <title>Advanced Responsive Gallery</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="column">
-            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400" alt="Earth from space">
-            <p>Column 1 Content</p>
-        </div>
-        <div class="column">
-            <img src="https://images.unsplash.com/photo-1614728263952-84ea256f9679?w=400" alt="Astronaut in space">
-            <p>Column 2 Content</p>
-        </div>
-        <div class="column">
-            <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=400" alt="Colorful nebula">
-            <p>Column 3 Content</p>
-        </div>
-    </div>
+    <main class="gallery">
+        <!-- Yêu cầu 1 & 2: Ảnh và text thay thế -->
+        <figure class="item">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600" alt="Earth from space at night">
+            <figcaption>Earth at Night</figcaption>
+        </figure>
+        <figure class="item">
+            <img src="https://images.unsplash.com/photo-1614728263952-84ea256f9679?w=600" alt="Astronaut floating in space">
+            <figcaption>Spacewalk</figcaption>
+        </figure>
+        <figure class="item">
+            <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600" alt="Colorful nebula in deep space">
+            <figcaption>Deep Space Nebula</figcaption>
+        </figure>
+        <figure class="item">
+            <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=600" alt="Rocket launching into the sky">
+            <figcaption>Liftoff</figcaption>
+        </figure>
+        <figure class="item">
+            <img src="https://images.unsplash.com/photo-1454789548928-9efd52dc4031?w=600" alt="Satellite orbiting in space">
+            <figcaption>Orbiting Satellite</figcaption>
+        </figure>
+        <!-- Con số cuối cùng (Yêu cầu 5c & 6a) -->
+        <figure class="item last-item">
+            <img src="https://images.unsplash.com/photo-1516849841032-87cbac4d88f7?w=600" alt="The moon surface with craters">
+            <figcaption>The Moon</figcaption>
+        </figure>
+    </main>
 </body>
 </html>
