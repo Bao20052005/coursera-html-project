@@ -1,67 +1,45 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #121212; /* Nền tối */
-    color: #e0e0e0; /* Chữ sáng - Tương phản chuẩn WCAG AAA */
-    text-align: center;
-    margin: 0;
-    padding: 20px;
-}
-
-h1, h2 {
-    color: #ffffff;
-}
-
-#image-container {
-    max-width: 800px;
-    margin: 0 auto 40px auto;
-}
-
-/* Khu vực hiển thị ảnh lớn */
-#preview-pic {
-    width: 100%;
-    height: 450px;
-    background-color: #1e1e1e;
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    border: 2px solid #444;
-    background-image: url(""); /* Bước 4a từ bài trước: url("") */
-    transition: background-image 0.3s ease-in-out;
-}
-
-/* Khu vực hiển thị chữ mô tả */
-#image-text {
-    margin-top: 15px;
-    font-size: 1.2rem;
-    font-style: italic;
-    color: #82b1ff; /* Xanh dương sáng nổi bật trên nền tối */
-    min-height: 1.5em;
-}
-
-.thumbnail-container {
+/* Mobile view (Default): 1 column, full width */
+.container {
     display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Các ảnh nhỏ bên dưới */
-.thumbnail {
-    width: 150px;
-    height: 100px;
-    object-fit: cover;
+.column {
+    width: 90%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.column img {
+    width: 100%;
+    height: auto;
     border-radius: 8px;
-    cursor: pointer;
-    border: 3px solid transparent;
-    transition: transform 0.2s, border-color 0.2s;
-    outline: none; /* Ẩn outline mặc định xấu xí của trình duyệt */
 }
 
-/* Hiệu ứng khi di chuột HOẶC khi dùng phím Tab focus vào */
-.thumbnail:hover, .thumbnail:focus {
-    transform: scale(1.08);
-    border-color: #82b1ff; /* Viền xanh sáng báo hiệu đang được chọn */
-    box-shadow: 0 0 15px rgba(130, 177, 255, 0.5);
+/* --- YÊU CẦU 1: Truy vấn #1 tại 772px (Tablet) --- */
+@media (min-width: 772px) {
+    .container {
+        flex-direction: row; /* Đổi sang nằm ngang */
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .column {
+        width: 45%; /* Divs bằng 45% chiều rộng */
+    }
+
+    .column img {
+        max-height: 30vh; /* Hình ảnh không quá 30% chiều cao chế độ xem (viewport height) */
+        object-fit: cover; /* Giữ tỷ lệ ảnh không bị méo khi ép chiều cao */
+    }
+}
+
+/* --- YÊU CẦU 2: Truy vấn #2 tại 998px (Desktop) --- */
+@media (min-width: 998px) {
+    .column {
+        width: 30%; /* Divs bằng 30% chiều rộng */
+    }
+    
+    /* Không cần thay đổi nào khác (theo đúng yêu cầu 2b) */
 }
