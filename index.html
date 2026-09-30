@@ -1,66 +1,63 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danh mục đầu tư của tôi</title>
+    <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Tính năng 1: Menu điều hướng -->
+    <!-- Feature 1: Navigation Menu -->
     <header>
         <nav>
-            <h1>Portfolio Của Tôi</h1>
+            <h1>My Portfolio</h1>
             <ul>
-                <li><a href="#about">Giới thiệu</a></li>
-                <li><a href="#projects">Dự án</a></li>
-                <li><a href="#contact">Liên hệ</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <!-- Tính năng 2: Phần giới thiệu -->
+        <!-- Feature 2: About Section -->
         <section id="about" class="container">
-            <h2>Xin chào, tôi là [Tên của bạn]!</h2>
-            <p>Tôi đang học khóa học Web Design for Everybody trên Coursera. Đây là dự án danh mục đầu tư đầu tiên của tôi được xây dựng từ đầu bằng HTML và CSS.</p>
+            <h2>Hello, I'm [Your Name]!</h2>
+            <p>I am currently taking the Web Design for Everybody course on Coursera. This is my first portfolio website built from scratch using HTML and CSS.</p>
         </section>
 
-        <!-- Tính năng 3: Hiển thị các dự án (Grid layout) -->
+        <!-- Feature 3: Projects Grid Layout -->
         <section id="projects" class="container">
-            <h2>Các dự án của tôi</h2>
+            <h2>My Projects</h2>
             <div class="project-grid">
                 <div class="project-card">
-                    <h3>Dự án 1</h3>
-                    <p>Mô tả ngắn về dự án đầu tiên của bạn.</p>
+                    <h3>Project 1</h3>
+                    <p>A short description of your first project goes here.</p>
                 </div>
                 <div class="project-card">
-                    <h3>Dự án 2</h3>
-                    <p>Mô tả ngắn về dự án thứ hai của bạn.</p>
+                    <h3>Project 2</h3>
+                    <p>A short description of your second project goes here.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Tính năng 4: Form liên hệ cơ bản -->
+        <!-- Feature 4: Contact Form -->
         <section id="contact" class="container">
-            <h2>Liên hệ với tôi</h2>
+            <h2>Contact Me</h2>
             <form action="#" method="POST">
-                <label for="name">Tên:</label><br>
+                <label for="name">Name:</label><br>
                 <input type="text" id="name" name="name" required><br><br>
                 
                 <label for="email">Email:</label><br>
                 <input type="email" id="email" name="email" required><br><br>
                 
-                <label for="message">Tin nhắn:</label><br>
+                <label for="message">Message:</label><br>
                 <textarea id="message" name="message" rows="4" required></textarea><br><br>
                 
-                <button type="submit">Gửi tin nhắn</button>
+                <button type="submit">Send Message</button>
             </form>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 [Tên của bạn]. Bài tập Coursera.</p>
-    </footer>
-</body>
-</html>
+        <p>&copy; 2026
