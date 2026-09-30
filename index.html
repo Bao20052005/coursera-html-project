@@ -1,39 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Responsive Gallery</title>
+    <title>Danh mục đầu tư của tôi</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main class="gallery">
-        <!-- Yêu cầu 1 & 2: Ảnh và text thay thế -->
-        <figure class="item">
-            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600" alt="Earth from space at night">
-            <figcaption>Earth at Night</figcaption>
-        </figure>
-        <figure class="item">
-            <img src="https://images.unsplash.com/photo-1614728263952-84ea256f9679?w=600" alt="Astronaut floating in space">
-            <figcaption>Spacewalk</figcaption>
-        </figure>
-        <figure class="item">
-            <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600" alt="Colorful nebula in deep space">
-            <figcaption>Deep Space Nebula</figcaption>
-        </figure>
-        <figure class="item">
-            <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=600" alt="Rocket launching into the sky">
-            <figcaption>Liftoff</figcaption>
-        </figure>
-        <figure class="item">
-            <img src="https://images.unsplash.com/photo-1454789548928-9efd52dc4031?w=600" alt="Satellite orbiting in space">
-            <figcaption>Orbiting Satellite</figcaption>
-        </figure>
-        <!-- Con số cuối cùng (Yêu cầu 5c & 6a) -->
-        <figure class="item last-item">
-            <img src="https://images.unsplash.com/photo-1516849841032-87cbac4d88f7?w=600" alt="The moon surface with craters">
-            <figcaption>The Moon</figcaption>
-        </figure>
+    <!-- Tính năng 1: Menu điều hướng -->
+    <header>
+        <nav>
+            <h1>Portfolio Của Tôi</h1>
+            <ul>
+                <li><a href="#about">Giới thiệu</a></li>
+                <li><a href="#projects">Dự án</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Tính năng 2: Phần giới thiệu -->
+        <section id="about" class="container">
+            <h2>Xin chào, tôi là [Tên của bạn]!</h2>
+            <p>Tôi đang học khóa học Web Design for Everybody trên Coursera. Đây là dự án danh mục đầu tư đầu tiên của tôi được xây dựng từ đầu bằng HTML và CSS.</p>
+        </section>
+
+        <!-- Tính năng 3: Hiển thị các dự án (Grid layout) -->
+        <section id="projects" class="container">
+            <h2>Các dự án của tôi</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Dự án 1</h3>
+                    <p>Mô tả ngắn về dự án đầu tiên của bạn.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Dự án 2</h3>
+                    <p>Mô tả ngắn về dự án thứ hai của bạn.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tính năng 4: Form liên hệ cơ bản -->
+        <section id="contact" class="container">
+            <h2>Liên hệ với tôi</h2>
+            <form action="#" method="POST">
+                <label for="name">Tên:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+                
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                
+                <label for="message">Tin nhắn:</label><br>
+                <textarea id="message" name="message" rows="4" required></textarea><br><br>
+                
+                <button type="submit">Gửi tin nhắn</button>
+            </form>
+        </section>
     </main>
+
+    <footer>
+        <p>&copy; 2026 [Tên của bạn]. Bài tập Coursera.</p>
+    </footer>
 </body>
 </html>
